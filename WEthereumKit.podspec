@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WEthereumKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of WEthereumKit.'
 
 # This description is used to generate tags and improve search results.
@@ -58,4 +58,8 @@ TODO: Add long description of the pod here.
     s.dependency 'SwiftNIOWebSocket', '~> 2.40.0'
     s.dependency 'SwiftNIOSSL', '~> 2.19.0'
     s.dependency 'SwiftNIOFoundationCompat', '~> 2.40.0'
+    
+    
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
