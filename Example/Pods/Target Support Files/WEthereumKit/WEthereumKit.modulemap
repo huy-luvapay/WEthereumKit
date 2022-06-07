@@ -1,0 +1,6 @@
+framework module WEthereumKit {
+  umbrella header "WEthereumKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

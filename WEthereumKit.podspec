@@ -21,22 +21,44 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/phuhuy2016/WEthereumKit'
+  s.homepage         = 'https://github.com/huy-luvapay'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'phuhuy2016' => 'huy.van@epapersmart.com' }
-  s.source           = { :git => 'https://github.com/phuhuy2016/WEthereumKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/huy-luvapay/WEthereumKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'WEthereumKit/Classes/**/*'
+  s.ios.deployment_target = '11.0'
   
-  # s.resource_bundles = {
-  #   'WEthereumKit' => ['WEthereumKit/Assets/*.png']
-  # }
+  s.swift_version = '5.0'
+  
+  s.source_files = 'WEthereumKit/Classes/**/*.{h,m,mm,swift}'
+  
+  s.resources = [
+    'WEthereumKit/Classes/**/*.bundle',
+    'WEthereumKit/Classes/**/*.xib',
+    "WEthereumKit/Assets/**/*.lproj"
+  ]
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+    s.dependency 'Alamofire', '~> 5.6.1'
+    s.dependency 'SnapKit'
+    s.dependency 'RxSwift', '~> 5.0'
+    s.dependency 'RxCocoa'
+    s.dependency 'BigInt'
+    s.dependency 'GRDB.swift'
+    s.dependency 'BlueSocket'
+        
+    s.dependency 'OpenSslKit.swift', '~> 1.0'
+    s.dependency 'Secp256k1Kit.swift', '~> 1.0'
+    s.dependency 'HdWalletKit.swift', '~> 1.5'
+    s.dependency 'ObjectMapper', '~> 4.2.0'
+    s.dependency 'SwiftNIO', '~> 2.40.0'
+    s.dependency 'SwiftNIOHTTP1', '~> 2.40.0'
+    s.dependency 'SwiftNIOWebSocket', '~> 2.40.0'
+    s.dependency 'SwiftNIOSSL', '~> 2.19.0'
+    s.dependency 'SwiftNIOFoundationCompat', '~> 2.40.0'
 end
