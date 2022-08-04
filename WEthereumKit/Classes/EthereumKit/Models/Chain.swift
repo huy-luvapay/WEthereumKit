@@ -54,7 +54,8 @@ extension Chain {
                 id: 1,
                 coinType: 60,
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 
@@ -64,7 +65,8 @@ extension Chain {
                 id: 56,
                 coinType: 60, // actually Binance Smart Chain has coin type 9006
                 syncInterval: 15,
-                isEIP1559Supported: false
+                isEIP1559Supported: false,
+                color: nil
         )
     }
 
@@ -74,7 +76,8 @@ extension Chain {
                 id: 137,
                 coinType: 60, // actually Matic has coin type 966
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 
@@ -84,7 +87,8 @@ extension Chain {
                 id: 10,
                 coinType: 60, // actually Optimism has coin type 614
                 syncInterval: 15,
-                isEIP1559Supported: false
+                isEIP1559Supported: false,
+                color: nil
         )
     }
 
@@ -94,7 +98,8 @@ extension Chain {
                 id: 42161,
                 coinType: 60, // actually Arbitrum One has coin type 9001
                 syncInterval: 15,
-                isEIP1559Supported: false
+                isEIP1559Supported: false,
+                color: nil
         )
     }
 
@@ -104,7 +109,8 @@ extension Chain {
                 id: 3,
                 coinType: 1,
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 
@@ -114,7 +120,8 @@ extension Chain {
                 id: 42,
                 coinType: 1,
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 
@@ -124,7 +131,8 @@ extension Chain {
                 id: 4,
                 coinType: 1,
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 
@@ -134,7 +142,8 @@ extension Chain {
                 id: 5,
                 coinType: 1,
                 syncInterval: 15,
-                isEIP1559Supported: true
+                isEIP1559Supported: true,
+                color: nil
         )
     }
 

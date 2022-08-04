@@ -131,30 +131,6 @@ extension RpcBlockchain: IBlockchain {
                 .disposed(by: disposeBag)
     }
     
-    func getWalletWatchAsset() {
-        Single.zip(
-                        syncer.single(rpc: GetWalletWatchAssetJsonRpc(address: address, defaultBlockParameter: .latest))
-                )
-                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
-                .observeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
-                .subscribe(onSuccess: { [weak self] balance, nonce in
-                    self?.onUpdate(accountState: AccountState(balance: balance, nonce: nonce))
-                    self?.syncState = .synced
-                }, onError: { [weak self] error in
-                    guard let webSocketError = error as? WebSocketStateError else {
-                        self?.syncState = .notSynced(error: error)
-                        return
-                    }
-
-                    switch webSocketError {
-                    case .connecting:
-                        self?.syncState = .syncing(progress: nil)
-                    case .couldNotConnect:
-                        self?.syncState = .notSynced(error: webSocketError)
-                    }
-                })
-                .disposed(by: disposeBag)
-    }
 
     var lastBlockHeight: Int? {
         storage.lastBlockHeight
