@@ -6,6 +6,7 @@ public struct Chain {
     public let coinType: UInt32
     public let syncInterval: TimeInterval
     public let isEIP1559Supported: Bool
+    public var color: UIColor? = nil
     public var rpcURL: String
     public var txBaseUrl: String
     public var apiKey: String
@@ -18,7 +19,7 @@ public struct Chain {
         return false
     }
 
-    public init(name: String, id: Int, coinType: UInt32, syncInterval: TimeInterval, isEIP1559Supported: Bool, rpcURL: String = "", txBaseUrl: String = "", apiKey: String = "", symbol: String = "") {
+    public init(name: String, id: Int, coinType: UInt32, syncInterval: TimeInterval, isEIP1559Supported: Bool, rpcURL: String = "", txBaseUrl: String = "", apiKey: String = "", symbol: String = "", color: UIColor?) {
         self.name = name
         self.id = id
         self.coinType = coinType
@@ -28,6 +29,7 @@ public struct Chain {
         self.txBaseUrl = txBaseUrl
         self.apiKey = apiKey
         self.symbol = symbol
+        self.color = color
     }
 
     public var isMainNet: Bool {

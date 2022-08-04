@@ -67,7 +67,7 @@ extension Signer {
         HDWallet(seed: seed, coinType: chain.coinType, xPrivKey: 0, xPubKey: 0)
     }
 
-    private static func ethereumAddress(privateKey: HDPrivateKey) -> Address {
+    public static func ethereumAddress(privateKey: HDPrivateKey) -> Address {
         let publicKey = Data(Secp256k1Kit.Kit.createPublicKey(fromPrivateKeyData: privateKey.raw, compressed: false).dropFirst())
 
         return Address(raw: Data(CryptoUtils.shared.sha3(publicKey).suffix(20)))

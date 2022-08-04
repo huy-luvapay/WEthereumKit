@@ -56,6 +56,7 @@ public class Kit {
                     self?.blockchain.syncAccountState()
                 })
                 .disposed(by: disposeBag)
+        
     }
 
 }

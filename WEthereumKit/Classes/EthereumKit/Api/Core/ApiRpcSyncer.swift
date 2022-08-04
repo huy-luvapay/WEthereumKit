@@ -38,12 +38,14 @@ class ApiRpcSyncer {
     }
 
     @objc func onFireTimer() {
-        rpcApiProvider.single(rpc: BlockNumberJsonRpc())
-                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
-                .subscribe(onSuccess: { [weak self] lastBlockHeight in
-                    self?.delegate?.didUpdate(lastBlockHeight: lastBlockHeight)
-                })
-                .disposed(by: disposeBag)
+        if(self.timer?.isValid == true) {
+            rpcApiProvider.single(rpc: BlockNumberJsonRpc())
+                    .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
+                    .subscribe(onSuccess: { [weak self] lastBlockHeight in
+                        self?.delegate?.didUpdate(lastBlockHeight: lastBlockHeight)
+                    })
+                    .disposed(by: disposeBag)
+        }
     }
 
     private func startTimer() {
@@ -90,6 +92,7 @@ extension ApiRpcSyncer: IRpcSyncer {
         disposeBag = DisposeBag()
         state = .notReady(error: Kit.SyncError.notStarted)
         timer?.invalidate()
+        timer = nil
     }
 
     func single<T>(rpc: JsonRpc<T>) -> Single<T> {
