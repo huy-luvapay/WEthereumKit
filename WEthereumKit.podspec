@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WEthereumKit'
-  s.version          = '0.1.62'
+  s.version          = '0.1.63'
   s.summary          = 'A short description of WEthereumKit.'
 
 # This description is used to generate tags and improve search results.
@@ -41,7 +41,8 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-    s.dependency 'Alamofire', '~> 5.6.1'
+    #s.dependency 'Alamofire', '~> 5.6.1'
+    s.dependency 'Alamofire', '~> 5.0.0'
     s.dependency 'SnapKit'
     s.dependency 'RxSwift', '~> 5.0'
     s.dependency 'RxCocoa'
