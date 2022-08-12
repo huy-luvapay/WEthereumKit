@@ -1,33 +1,33 @@
 import UIKit
 
-extension UIView {
+internal extension UIView {
 
-    public var width: CGFloat {
+    internal var width: CGFloat {
         frame.size.width
     }
 
-    public var height: CGFloat {
+    internal var height: CGFloat {
         frame.size.height
     }
 
-    public var x: CGFloat {
+    internal var x: CGFloat {
         frame.origin.x
     }
 
-    public var y: CGFloat {
+    internal var y: CGFloat {
         frame.origin.y
     }
 
-    public var bottom: CGFloat {
+    internal var bottom: CGFloat {
         frame.origin.y + frame.size.height
     }
 
-    public var size: CGSize {
+    internal var size: CGSize {
         frame.size
     }
 
     @IBInspectable
-    public var cornerRadius: CGFloat {
+    internal var cornerRadius: CGFloat {
         get {
             layer.cornerRadius
         }
@@ -38,7 +38,7 @@ extension UIView {
     }
 
     @IBInspectable
-    public var borderWidth: CGFloat {
+    internal var borderWidth: CGFloat {
         get {
             layer.borderWidth
         }
@@ -48,7 +48,7 @@ extension UIView {
     }
 
     @IBInspectable
-    public var borderColor: UIColor? {
+    internal var borderColor: UIColor? {
         get {
             guard let color = layer.borderColor else { return nil }
             return UIColor(cgColor: color)
@@ -58,7 +58,7 @@ extension UIView {
         }
     }
 
-    public func set(hidden: Bool, animated: Bool = false, duration: TimeInterval = 0.3, completion: ((Bool) -> ())? = nil) {
+    internal func set(hidden: Bool, animated: Bool = false, duration: TimeInterval = 0.3, completion: ((Bool) -> ())? = nil) {
         if isHidden == hidden {
             return
         }
@@ -80,7 +80,7 @@ extension UIView {
         }
     }
 
-    public func shakeView(_ block: (() -> Void)? = nil) {
+    internal func shakeView(_ block: (() -> Void)? = nil) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(block)
 
@@ -98,7 +98,7 @@ extension UIView {
     }
     
     // drawing on context methods
-    public func createRoundedRectPath(for rect: CGRect, radius: CGFloat) -> CGMutablePath {
+    internal func createRoundedRectPath(for rect: CGRect, radius: CGFloat) -> CGMutablePath {
         let path = CGMutablePath()
 
         let midTopPoint = CGPoint(x: rect.midX, y: rect.minY)
@@ -119,7 +119,7 @@ extension UIView {
         return path
     }
 
-    public func drawGradient(context: CGContext, rect: CGRect, colors: [CGColor], locations: [CGFloat]) {
+    internal func drawGradient(context: CGContext, rect: CGRect, colors: [CGColor], locations: [CGFloat]) {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let colors: CFArray = colors as CFArray
         guard let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations) else {
